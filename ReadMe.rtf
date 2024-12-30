@@ -1,18 +1,9 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2820
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\sa321\partightenfactor0
 
-\f0\b\fs24 \cf0 \expnd0\expndtw0\kerning0
 # PM2.5 Air Quality Analysis and Forecasting\
-\
+
 ## Project Overview\
 This project analyzes **PM2.5 air quality levels** over time, decomposes its trends, visualizes patterns across years and months, and predicts future PM2.5 levels using time series models. The dataset used includes multiple pollutants such as PM10, O3, NO2, SO2, and CO.\
----\
-\
+
 ## Table of Contents\
 1. Data Loading and Preprocessing\
 2. Key Visualizations\
@@ -25,76 +16,69 @@ This project analyzes **PM2.5 air quality levels** over time, decomposes its tre
    - AutoARIMA Model Forecast for 2025\
 4. Results and Insights\
 5. Dependencies\
----\
-\
+
 ## Data Loading and Preprocessing\
 - **Dataset**: `iti-jahangirpuri, delhi-air-quality.csv`\
 - **Steps**:\
   - Cleaned column names and converted the `date` column to datetime.\
   - Handled missing data by interpolation and dropping NaN values for pollutant columns.\
   - Extracted the `year` and `month` for temporal analysis.\
----\
+
 ## Key Visualizations\
-\
+
 ### 1. PM2.5 Levels Over Time\
-\
+
 - **Description**: Visualizes raw PM2.5 levels over the years.\
 - **Insights**: Clear spikes in PM2.5 levels during certain periods, indicating seasonality.\
-\
+
 ### 2. Time Series Decomposition\
-\
+
 - **Components**:\
    - **Trend**: Shows the long-term pattern.\
    - **Seasonality**: Repeating patterns across months.\
    - **Residual**: Irregular fluctuations.\
 - **Insights**: Seasonal components align with annual cycles, and trends indicate steady fluctuations.\
-\
+
 ### 3. Correlation Heatmap\
-\
+
 - **Description**: Correlation matrix of pollutants.\
 - **Top Correlations**:\
    - **PM2.5 and PM10**: High correlation (0.78)\
    - **PM2.5 and CO**: Strong positive correlation (0.68)\
 - **Insights**: PM10 and CO are strong predictors for PM2.5.\
-\
+
 ### 4. Monthly Average PM2.5 Levels by Year\
-\
+
 - **Description**: Monthly trends for PM2.5 levels over different years.\
 - **Insights**: \
    - PM2.5 levels peak in winter months (November to February).  Diwali is celebrated during these months.\
    - Lowest levels during summer (June to August).\
-\
+
 ### 5. Interactive 3D Scatter Plot\
 - **Description**: A 3D visualization showing PM2.5 levels across months and years.\
-\
----\
-\
+
 ## Time Series Forecasting\
-\
+
 ### AutoARIMA Forecast for 2025\
 - **Model**: Best model identified as **ARIMA(0,0,2)(0,1,1)[12]**.\
 - **Forecast**:\
    - Monthly forecast for 2025 with a 95% confidence interval.\
    - AutoARIMA automatically tuned seasonal and trend parameters.\
-\
-\
-\
+
 **Model Summary**:\
 - **AIC**: 708.572\
 - **BIC**: 717.679\
 - **Key Coefficients**:\
    - MA(1): 1.0037\
    - Seasonal MA(12): -0.4319\
----\
-\
+
 ## Results and Insights\
 1. **Seasonality**: PM2.5 levels peak during winter months, indicating recurring patterns.\
 2. **Key Pollutants**: PM10 and CO have strong correlations with PM2.5 levels, making them significant predictors.\
 3. **Forecast**: The forecasted PM2.5 levels for 2025 show seasonal spikes, similar to historical data.\
 4. **Trend Analysis**: Long-term trends indicate consistent levels with slight fluctuations over years.\
-\
----\
-\
+
+
 ## Dependencies\
 The following Python libraries are required:\
 - pandas\
@@ -105,14 +89,11 @@ The following Python libraries are required:\
 - statsmodels\
 - pmdarima\
 - scikit-learn\
-\
-Install dependencies using:\
-\
+
+Install dependencies using:
+
 pip install pandas numpy matplotlib seaborn plotly statsmodels pmdarima scikit-learn\
-```\
-\
----\
-\
+
 ## How to Run\
 1. **Set up the environment**:\
    - Install the required libraries.\
@@ -122,11 +103,7 @@ pip install pandas numpy matplotlib seaborn plotly statsmodels pmdarima scikit-l
 3. **Outputs**:\
    - Visualizations of PM2.5 trends, decompositions, and correlation.\
    - Forecasted PM2.5 levels for 2025 using AutoARIMA.\
-\
----\
-\
+
+
 ## Conclusion\
 This analysis provides a comprehensive understanding of PM2.5 air quality trends and forecasts future levels. \
----\
-\
-}
